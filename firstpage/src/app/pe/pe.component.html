@@ -1,0 +1,56 @@
+<form
+ #userForm="ngForm"
+ (ngSubmit)="onSubmit(userForm.value)">
+   
+    product_code:<input type="text" name='product_code' required placeholder="product_code" ngModel>
+      product_name:<input type="text" name='product_name' placeholder="product_name" ngModel>
+  
+    product_price:<input type="number" name='product_price' placeholder="product_price" ngModel>
+      product_gst:<input type="text" name='product_gst' placeholder="product_gst" ngModel><br>
+<br>    <input type='submit' value='Submit' class="butn">
+
+</form><p>
+<h1>{{welcome}}</h1>
+                <table class="table">
+                    <tr>
+                        <th>S.no</th>
+                        <th>Product_Code</th>
+                        <th>Product_Name</th>
+                        <th>Product_Price</th>  
+                        <th>Product_Gst</th>
+                        
+                         <tr *ngFor="let product_name of products; let i = index">
+                          <td>{{i + 1}}</td>
+                        <td>{{product_name.product_code}}</td>
+                        <td>{{product_name.product_name}}</td>
+                           <td>{{product_name.product_price}}</td>
+                        <td>{{product_name.product_gst}}</td>
+               
+               </table>
+
+<br>
+
+ <form
+  #del="ngForm"
+   (ngSubmit)="delete(del.value)">
+DELETE:
+    <input type='text' name='product_code' required placeholder="product_code"  ngModel>
+    <br>
+    <input type='submit' value='submit' class="butn"> 
+  </form>
+
+
+<br>
+<BR>
+  UPDATE:
+ <form #up="ngForm"
+  (ngSubmit)="update(up.value)">
+    
+    product_code:<input type='text' name='product_code' required placeholder="product_code" ngModel>
+    product_name:<input type='text' name='product_name' placeholder="product_name" ngModel>
+    product_price:<input type='text' name='product_price' placeholder="product_price" ngModel>
+    product_gst:<input type='text' name='product_gst' placeholder="product_gst"ngModel>
+    <br>
+    <input type='submit' value='submit' class="butn"> 
+  </form>
+  
