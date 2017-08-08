@@ -155,6 +155,7 @@ server.route({
       connection.query(`SELECT * FROM products_entry WHERE product_code=?`,[product_code],function(err,result){
           if(err){
               console.log("Error"); 
+              reply('Error');
           }else{
               reply(result);
           }

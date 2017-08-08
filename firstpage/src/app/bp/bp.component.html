@@ -1,14 +1,31 @@
-   <form  #search="ngForm"
+
+<ul>
+  <li *ngFor="let product_code of products; let i = index">
+     product_code:-{{product_code.product_code}}   product_name:- {{product_code.product_name}}
+  </li>
+</ul>
+
+
+ 
+<form  #search="ngForm"
  (ngSubmit)="ser(search.value)">
     
       <input type="text" class="st" name="product_code" autofocus placeholder="Search by product_code?" ngModel>
 
     
-          <input type='submit' value='Submit' class="butn">
+          <input type='submit' value='search' class="butn">
+          
 
 </form>
-    
+<br>
+<br>
+
                  <h1>{{welcome}}</h1>
+
+
+
+        
+
                 <table class="table">
                     <tr>
                         <th>S.no</th>
@@ -16,26 +33,27 @@
                         <th>Product_Name</th>
                         <th>Product_Price</th>
                         <th>Product_Gst</th>
-                       <th>Product_quantity </th>
+                       <th>Product_quantity      ( Press  TAB ) </th>
                         <th>Total    </th>
                     </tr>
                          <tr class="r1" *ngFor="let product_name of products; let i = index">
-                          <td>{{i + 1}}</td>
+                          <td #sn>{{i + 1}}</td>
                             <td>{{product_name.product_code}}</td>
                            <td>{{product_name.product_name}}</td>
                            <td class="price">{{product_name.product_price}}</td>
                         <td class="gst">{{product_name.product_price*(product_name.product_gst/100)}}</td>
-                        <td class="quantity"><input type="number"(keypress)="onClickMe()"  (keypress)="add()"/>{{quantity}}</td>
-                          <td>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))*quantity}}</td>
-                    <!-- <td>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))}}</td> --> 
+                        <td class="quantity"><input #box (keyup)="onEnter(sn.innerHTML,box.value)"></td>
+                          <td #add>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))*quantities[sn.innerHTML]}}</td>
+                          <input type="button" value="TAB" class="tbut" (keyup)="settotal(sn.innerHTML, add.innerHTML)">
+                    <!-- <td>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))}}</td>  
                          </tr>
                           <tr>
-                             <td colspan="6" class="tt">Total number of Products</td>
+                             <td colspan="6" class="tp">Total number of Products</td>
                             <td></td>
-                          </tr>
+                          </tr>-->
                           <tr>
-                             <td colspan="6" class="tt">Total price</td>
-                            <td>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))*quantity}}</td>
+                             <td colspan="6" class="Gt">Total price</td>
+                            <td>{{fulltotal}}</td>
                           </tr>
                           
                 </table>
