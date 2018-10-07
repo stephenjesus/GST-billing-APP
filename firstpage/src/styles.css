@@ -1,11 +1,11 @@
-/* You can add global styles to this file, and also import other style files
+ You can add global styles to this file, and also import other style files
 body{
 
    background-image: url('ns.jpg');
     background-size: 100%;
 
 } 
-*/ 
+
 input{
 	color: blue;
 	
@@ -19,6 +19,8 @@ input{
     color: wheat;
 	text-align: center;
 	float:center;
+	border: none;
+    border-radius: 3px;
 }
 h1{
 	color: navajowhite;

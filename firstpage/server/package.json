@@ -1,0 +1,16 @@
+{
+  "name": "stephen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "hapi": "^17.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

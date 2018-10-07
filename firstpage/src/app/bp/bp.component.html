@@ -33,7 +33,7 @@
                         <th>Product_Name</th>
                         <th>Product_Price</th>
                         <th>Product_Gst</th>
-                       <th>Product_quantity      ( Press  TAB ) </th>
+                       <th>Product_quantity  </th>
                         <th>Total    </th>
                     </tr>
                          <tr class="r1" *ngFor="let product_name of products; let i = index">
@@ -44,13 +44,7 @@
                         <td class="gst">{{product_name.product_price*(product_name.product_gst/100)}}</td>
                         <td class="quantity"><input #box (keyup)="onEnter(sn.innerHTML,box.value)"></td>
                           <td #add>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))*quantities[sn.innerHTML]}}</td>
-                          <input type="button" value="TAB" class="tbut" (keyup)="settotal(sn.innerHTML, add.innerHTML)">
-                    <!-- <td>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))}}</td>  
-                         </tr>
-                          <tr>
-                             <td colspan="6" class="tp">Total number of Products</td>
-                            <td></td>
-                          </tr>-->
+                          <input type="button" value="TAB" class="tbut" (keypress)="settotal(sn.innerHTML, add.innerHTML)" (keyup)="settotal(sn.innerHTML, add.innerHTML)">
                           <tr>
                              <td colspan="6" class="Gt">Total price</td>
                             <td>{{fulltotal}}</td>

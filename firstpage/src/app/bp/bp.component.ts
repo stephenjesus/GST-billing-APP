@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bp.component.css']
 })
 export class BpComponent implements OnInit {
-  
+
 
   /* constructor(){
         this.welcome = "PRODUCT_LIST"
@@ -17,64 +17,62 @@ export class BpComponent implements OnInit {
           xhttp.send();
           this.products = JSON.parse(xhttp.responseText);
     }; 
-    */  
+    */
 
 
 
 
-   sno = null;
-   quantities = [];
-    totals=[];
-    fulltotal=0;
-                      onEnter(sno: number, value: number)  { 
-                        this.sno = sno;
-                    this.quantities[sno] = value;  
+  sno = null;
+  quantities = [];
+  totals = [];
+  fulltotal = 0;
+  onEnter(sno: number, value: number) {
+    this.sno = sno;
+    this.quantities[sno] = value;
   }
 
-     
-    settotal = function(sno: number, value: number){
+
+  settotal = function (sno: number, value: number) {
     console.log(sno, value);
     this.totals[sno] = value;
     this.fulltotal = 0;
-    for(var x in this.totals)
-      {
+    for (var x in this.totals) {
       this.fulltotal += parseFloat(this.totals[x]);
     }
     //console.log(this.fulltotal);
   }
-      
-  
-  welcome=' PRODUCT_ENTRY';
-    products : [{
-        product_name: string,
-        product_code : string,
-        product_price:string;
-        product_gst:string;
-    }];
 
-  
-   ser=function(details)
-   {
-   //console.log(details);
+
+  welcome = ' PRODUCT_ENTRY';
+  products: [{
+    product_name: string,
+    product_code: string,
+    product_price: string;
+    product_gst: string;
+  }];
+
+
+  ser = function (details) {
+    //console.log(details);
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'http://localhost:3100/searchdb?product_code='+details['product_code'], false);
+    xhttp.open('GET', 'http://localhost:3100/searchdb?product_code=' + details['product_code'], false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send();
-    if(this.products === undefined){
-      this.products=JSON.parse(xhttp.responseText);
+    if (this.products === undefined) {
+      this.products = JSON.parse(xhttp.responseText);
     }
-    else{
+    else {
+      console.log(xhttp.responseText , 'xhttp.responseText');
       this.products = this.products.concat(JSON.parse(xhttp.responseText));
     }
     /*this.products = [{product_name: "x", product_code: "1", product_price: "5", product_gst: "5"},
                       {product_name: "y", product_code: "2", product_price: "3", product_gst: "4"}
   ];*/
-    
-   }
-  onClickMe=function()
-  {
-    
+
+  }
+  onClickMe = function () {
+
   }
 
   ngOnInit() {

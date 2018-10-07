@@ -2,11 +2,11 @@
  #userForm="ngForm"
  (ngSubmit)="onSubmit(userForm.value)">
    
-    product_code:<input type="text" name='product_code' required placeholder="product_code" ngModel>
-      product_name:<input type="text" name='product_name' placeholder="product_name" ngModel>
+    product_code:<input type="text" class="inputbox" name='product_code' required placeholder="product_code" ngModel>
+      product_name:<input type="text" class="inputbox" name='product_name' placeholder="product_name" ngModel>
   
-    product_price:<input type="number" name='product_price' placeholder="product_price" ngModel>
-      product_gst:<input type="text" name='product_gst' placeholder="product_gst" ngModel><br>
+    product_price:<input type="number" class="inputbox" name='product_price' placeholder="product_price" ngModel>
+      product_gst:<input type="text" class="inputbox" name='product_gst' placeholder="product_gst" ngModel><br>
 <br>    <input type='submit' value='insert' class="butn">
 
 </form><p>
@@ -34,7 +34,7 @@
   #del="ngForm"
    (ngSubmit)="delete(del.value)">
 DELETE:
-    <input type='text' name='product_code' required placeholder="product_code"  ngModel>
+    <input type='text' class="inputbox" name='product_code' required placeholder="product_code"  ngModel>
     <br>
     <input type='submit' value='delete' class="butn"> 
   </form>
@@ -46,10 +46,10 @@ DELETE:
  <form #up="ngForm"
   (ngSubmit)="update(up.value)">
     
-    product_code:<input type='text' name='product_code' required placeholder="product_code" ngModel>
-    product_name:<input type='text' name='product_name' placeholder="product_name" ngModel>
-    product_price:<input type='text' name='product_price' placeholder="product_price" ngModel>
-    product_gst:<input type='text' name='product_gst' placeholder="product_gst"ngModel>
+    product_code:<input type='text' class="inputbox" name='product_code' required placeholder="product_code" ngModel>
+    product_name:<input type='text' class="inputbox" name='product_name' placeholder="product_name" ngModel>
+    product_price:<input type='text' class="inputbox" name='product_price' placeholder="product_price" ngModel>
+    product_gst:<input type='text' class="inputbox" name='product_gst' placeholder="product_gst"ngModel>
     <br>
     <input type='submit' value='update' class="butn"> 
   </form>
