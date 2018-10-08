@@ -9,22 +9,12 @@
  
 <form  #search="ngForm"
  (ngSubmit)="ser(search.value)">
-    
-      <input type="text" class="st" name="product_code" autofocus placeholder="Search by product_code?" ngModel>
-
-    
-          <input type='submit' value='search' class="butn">
-          
-
+      <div class="ui-g-12" style="padding:36px;margin-top: 3%;">
+        <input type="text" class="st" name="product_code" autofocus placeholder="Search by product_code?" ngModel>
+        <input type='submit' value='search' class="butn">
+        </div>    
 </form>
-<br>
-<br>
 
-                 <h1>{{welcome}}</h1>
-
-
-
-        
 
                 <table class="table">
                     <tr>

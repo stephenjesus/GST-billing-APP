@@ -1,4 +1,4 @@
-a{
+/* a{
     text-decoration: none;
     background: black;
     color: yellow;
@@ -14,31 +14,134 @@ p{
      font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     
-}
+} */
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+	 
+    list-style:none;
+	
 }
 
-li {
-    float: left;
+a:link,a:visited
+{
+	text-decoration:none;
+	color:brown;
+	font-family:Arial;
+
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
 
-a:hover:not(.active) {
-    background-color: #111;
+header h2
+{
+text-align:center;	
 }
+header h1
+{
+	color:black;
+	margin:10px;
+	font-size:30px;
+	font:bold;
+	font-family:Arial;
+	text-align:center;
+}
+header
+{
+	
+	background-image:url('rose1.jpg');
+   height:100px;
+   margin:20px;
+	
+}
+a:hover
+{
+	color:black;
+}
+                nav ul{
+	list-style-type:none;
+	padding:0;
+ }
+	nav{
+		text-align:center;
+	}									
+nav li{
+	display:inline;
+	float:left;
+	
+	
+	}
+	nav a:hover{
+		background-color:green;
+	}
+	
+	nav a:link,a:visited
+	{
+		background-color:pink;
+		color:black;
+		display:block;
+		width:160px;
+		text-align:center;
+		padding:10px 0;
+	}
 
-.active {
-background-color:#4CAF50;
-}
+	.login {
+		margin-top: 79px !important;
+		margin: 20px auto;
+		width: 332px;
+		padding: 30px 25px;
+		background: white;
+		border: 1px solid #c4c4c4;
+	  }
+	  
+	  h1.login-title {
+		margin: -28px -25px 25px;
+		padding: 15px 25px;
+		line-height: 30px;
+		font-size: 25px;
+		font-weight: 300;
+		color: #ADADAD;
+		text-align:center;
+		background: #f7f7f7;
+	   
+	  }
+	  
+	  .login-input {
+		width: 276px;
+		height: 45px;
+		margin-bottom: 25px;
+		/* padding-left: 10px; */
+		font-size: 15px;
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	  }
+	  .login-input:focus {
+		  border-color:#6e8095;
+		  outline: none;
+		}
+	  .login-button {
+		height: 33px;
+		width: 167px;
+		margin-left: 22%;
+		padding: 0;
+		font-size: 15px;
+		color: #fff;
+		text-align: center;
+		background: #f0776c;
+		border: 0;
+		border-radius: 5px;
+		cursor: pointer;
+		outline: 0;
+	  }
+	  
+	  .login-lost
+	  {
+		text-align:center;
+		margin-bottom:0px;
+	  }
+	  
+	  .login-lost a
+	  {
+		color:#666;
+		text-decoration:none;
+		font-size:13px;
+	  }
+	  

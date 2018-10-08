@@ -39,7 +39,7 @@ export class BpComponent implements OnInit {
     for (var x in this.totals) {
       this.fulltotal += parseFloat(this.totals[x]);
     }
-    //console.log(this.fulltotal);
+    console.log(this.fulltotal);
   }
 
 

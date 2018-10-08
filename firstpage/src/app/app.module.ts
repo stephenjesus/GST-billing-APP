@@ -14,19 +14,15 @@ import {RouterModule,Routes} from '@angular/router'
     AppComponent,
     PeComponent,
     BpComponent
-
-    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-{path:'pe',component:PeComponent },
-{path:'bp',component:BpComponent }
-
-    ])
-   
+      { path: 'pe', component: PeComponent },
+      { path: 'bp', component: BpComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

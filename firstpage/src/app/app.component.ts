@@ -9,18 +9,19 @@ import 'rxjs/add/operator/map';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
- 
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './../index.html',
-//   styleUrls: ['./../style.css' ]
-// })
 
 export class AppComponent {
-
-
-} 
- 
- 
- 
- 
+  type= 'password';
+  show = false;
+  toggleShow() {
+    this.show = !this.show;
+    if (this.show) {
+        this.type = 'text';
+    } else {
+        this.type = 'password';
+    }
+}
+ onLogin(details) {
+  console.log(details , '66666666');
+ }
+}

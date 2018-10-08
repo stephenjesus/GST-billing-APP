@@ -1,15 +1,16 @@
 <form
  #userForm="ngForm"
  (ngSubmit)="onSubmit(userForm.value)">
-   
-    product_code:<input type="text" class="inputbox" name='product_code' required placeholder="product_code" ngModel>
+    <div class="ui-g-12" style="padding: 36px;">
+      product_code:<input type="text" class="inputbox" name='product_code' required placeholder="product_code" ngModel>
       product_name:<input type="text" class="inputbox" name='product_name' placeholder="product_name" ngModel>
-  
-    product_price:<input type="number" class="inputbox" name='product_price' placeholder="product_price" ngModel>
+    
+      product_price:<input type="number" class="inputbox" name='product_price' placeholder="product_price" ngModel>
       product_gst:<input type="text" class="inputbox" name='product_gst' placeholder="product_gst" ngModel><br>
-<br>    <input type='submit' value='insert' class="butn">
-
-</form><p>
+      <br> <input type='submit' value='insert' class="butn">
+    </div>
+</form>
+<p>
 <h1>{{welcome}}</h1>
                 <table class="table">
                     <tr>
@@ -33,10 +34,13 @@
  <form
   #del="ngForm"
    (ngSubmit)="delete(del.value)">
-DELETE:
+   DELETE:
+   <div class="ui-g-12" style="padding-left: 36px; margin-top: 1%">
     <input type='text' class="inputbox" name='product_code' required placeholder="product_code"  ngModel>
     <br>
+    <br>
     <input type='submit' value='delete' class="butn"> 
+</div>
   </form>
 
 
@@ -45,12 +49,14 @@ DELETE:
   UPDATE:
  <form #up="ngForm"
   (ngSubmit)="update(up.value)">
-    
+  <div class="ui-g-12" style="padding-left: 36px; margin-top: 1%"> 
     product_code:<input type='text' class="inputbox" name='product_code' required placeholder="product_code" ngModel>
     product_name:<input type='text' class="inputbox" name='product_name' placeholder="product_name" ngModel>
     product_price:<input type='text' class="inputbox" name='product_price' placeholder="product_price" ngModel>
     product_gst:<input type='text' class="inputbox" name='product_gst' placeholder="product_gst"ngModel>
     <br>
+    <br>
     <input type='submit' value='update' class="butn"> 
+  </div>
   </form>
   
