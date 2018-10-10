@@ -42,16 +42,14 @@ export class PeComponent implements OnInit {
     xhttp.send();
         location.reload();
 }
-onSubmit=function(details)
-{
-  console.log(details);
+  onSubmit = function (details) {
+    console.log(details);
     var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'http://localhost:3100/inserttodb?product_code='+details['product_code']+'&product_name='+details['product_name']+'&product_price='+details['product_price']+'&product_gst='+details['product_gst'], false);
+    xhttp.open('GET', 'http://localhost:3100/inserttodb?product_code=' + details['product_code'] + '&product_name=' + details['product_name'] + '&product_price=' + details['product_price'] + '&product_gst=' + details['product_gst'], false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send();
-        location.reload();
-
-}
+    location.reload();
+  }
 welcome=' PRODUCT_ENTRY';
     products : [{
         product_name: string,

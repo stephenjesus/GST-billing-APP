@@ -7,13 +7,15 @@ import {HttpModule} from '@angular/http'
 import { AppComponent } from './app.component';
 import {PeComponent} from './pe/pe.component';
 import {BpComponent} from './bp/bp.component';
-import {RouterModule,Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     PeComponent,
-    BpComponent
+    BpComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import {RouterModule,Routes} from '@angular/router'
     HttpModule,
     RouterModule.forRoot([
       { path: 'pe', component: PeComponent },
-      { path: 'bp', component: BpComponent }
+      { path: 'bp', component: BpComponent },
+      { path: 'signup' , component: SignupComponent }
     ]),
   ],
   providers: [],

@@ -1,0 +1,16 @@
+<div *ngIf="path === 'http://localhost:4200/signup'">
+  <form class="login" #loginForm="ngForm" (ngSubmit)="signup(loginForm.value)">
+    <h1 class="login-title">Create account</h1>
+    <label class="labelclass"> Email * </label>
+    <input type="text" class="login-input" name="email" placeholder="Email Address" ngModel>
+    <label class="labelclass"> Password * </label>
+    <input type="{{type}}" class="login-input2" name="password" placeholder="Password" ngModel>
+    <label class="labelclass"> Confirm Password * </label>
+    <input type="{{type}}" class="login-input2" name="confirmpassword" placeholder="Confirm Password" ngModel>
+    <!-- <p class="login-lost"> 
+        <input type="checkbox" (click)="toggleShow()">Show Password
+     </p>  -->
+     <span class="forgot" href="https://accounts.google.com/signin/v2/usernamerecovery?flowName=GlifWebSignIn&flowEntry=ServiceLogin"> Forgot email? </span>
+     <input type="submit" value="Sign Up" class="login-button">
+  </form>
+</div>
