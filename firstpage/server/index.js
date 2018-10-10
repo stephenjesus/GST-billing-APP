@@ -180,6 +180,88 @@ server.route({
 
     }
 });
+server.route({
+    config: {
+        cors: {
+            origin: ['*'],
+            additionalHeaders: ['cache-control', 'x-requested-with']
+        }
+    },
+    method: 'GET',
+    path: '/login',
+    handler: function (request, reply) {
+        //  console.log(request.query);
+        //  var product_name = request.query['product_name'];
+
+        return new Promise((resolve, reject) => {
+            //var product_code = parseInt(request.query['product_code']);
+            var email = request.query['email'];
+            console.log(request.query);
+            if (email !== "") {
+                console.log('insideeeeee');
+                connection.query(`SELECT * FROM users WHERE email=?`, [email], function (err, result) {
+                    if (err) {
+                        console.log("Error");
+                        reject('Error');
+                    } else {
+                        console.log(result);
+                        if(result && result.length === 0) {
+                           resolve('not found');
+                        } else  {
+                         resolve(result);
+                        }
+                    }
+                })
+            } else {
+                resolve('email not found');
+            }
+        })
+
+    }
+});
+server.route({
+    config: {
+        cors: {
+            origin: ['*'],
+            additionalHeaders: ['cache-control', 'x-requested-with']
+        }
+    },
+    method: ['POST', 'GET'],
+    path: '/signup',
+    handler: function(request, reply){
+        return new Promise((resolve, reject) => {
+            //var product_code = parseInt(request.query['product_code']);
+            var email = request.query['email'];
+            console.log(request.query);
+            if (email !== "") {
+                connection.query(`SELECT * FROM users WHERE email=?`, [email], function (err, result) {
+                    if (err) {
+                        console.log("Error");
+                        reject('Error');
+                    } else {
+                        console.log(result);
+                        if(result && result.length === 0) {
+                           connection.query(`INSERT INTO users SET ?`,request.query,function(err,result){
+                            if(err){
+                                console.log(err); 
+                            }else{
+                                console.log(result);
+                                resolve(result);
+                            }
+                        })
+                        } else  {
+                         resolve('email already');
+                        }
+                    }
+                })
+            } else {
+                resolve('email not found');
+            }
+        });
+
+        reply("INSERTED SUCCESSFULLY");
+            }
+});
 
 
 
