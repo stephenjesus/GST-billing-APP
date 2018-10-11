@@ -45,8 +45,7 @@ header h1
 }
 header
 {
-	
-	background-image:url('rose1.jpg');
+   background-image:url('rose1.jpg');
    height:100px;
    margin:20px;
 	
@@ -159,5 +158,11 @@ nav li{
 		color:#666;
 		text-decoration:none;
 		font-size:13px;
+	  }
+	  .newacc {
+		font-size: 12px;
+		cursor: pointer;
+		text-decoration: underline;
+		color: blue;
 	  }
 	  

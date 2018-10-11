@@ -8,14 +8,16 @@ import { AppComponent } from './app.component';
 import {PeComponent} from './pe/pe.component';
 import {BpComponent} from './bp/bp.component';
 import {RouterModule, Routes} from '@angular/router';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     PeComponent,
     BpComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { SignupComponent } from './signup/signup.component'
     RouterModule.forRoot([
       { path: 'pe', component: PeComponent },
       { path: 'bp', component: BpComponent },
-      { path: 'signup' , component: SignupComponent }
+      { path: 'signup' , component: SignupComponent },
+      { path: 'login' , component: LoginComponent },
     ]),
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-bp',
   templateUrl: './bp.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BpComponent implements OnInit {
 
+  constructor(private Router: Router) {
 
+  }
   /* constructor(){
         this.welcome = "PRODUCT_LIST"
 
@@ -77,5 +79,10 @@ export class BpComponent implements OnInit {
 
   ngOnInit() {
   }
+  logout() {
+    localStorage.clear();
+    // this.token = false;
+    this.Router.navigate(['/login']);
+  }  
 
 }

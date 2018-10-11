@@ -28,7 +28,6 @@ export class SignupComponent implements OnInit , DoCheck {
     } else if (this.userdata) {
         this.token = true;
     }
-    console.log(this.token , 'token55');
 }
 signup(details) {
   console.log(details);
@@ -64,8 +63,7 @@ signup(details) {
     } else {
         const res = JSON.parse(xhttp.responseText);
         console.log(res , 'res');
-        this.Router.navigate(['/']);
-           location.reload();
+        this.Router.navigate(['/login']);
     }
 }
 ValidateEmail(mail) {

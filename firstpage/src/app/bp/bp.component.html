@@ -1,4 +1,13 @@
-
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/signup">New Account</a></li>
+      <li><a routerLink="/pe">Product_Entry</a></li>
+      <li><a routerLink="/bp">Billing_Page</a></li>
+      <li><a routerLink="/login" (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+</header>
 <ul>
   <li *ngFor="let product_code of products; let i = index">
      product_code:-{{product_code.product_code}}   product_name:- {{product_code.product_name}}
@@ -9,7 +18,7 @@
  
 <form  #search="ngForm"
  (ngSubmit)="ser(search.value)">
-      <div class="ui-g-12" style="padding:36px;margin-top: 3%;">
+      <div class="ui-g-12" style="padding:36px;">
         <input type="text" class="st" name="product_code" autofocus placeholder="Search by product_code?" ngModel>
         <input type='submit' value='search' class="butn">
         </div>    

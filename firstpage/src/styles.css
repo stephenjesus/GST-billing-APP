@@ -14,13 +14,23 @@ input{
 }
 .butn
 {
-    width: 150px;
+    /* width: 150px;
     background: black;
     color: wheat;
 	text-align: center;
 	float:center;
 	border: none;
-    border-radius: 3px;
+	border-radius: 3px; */
+	width: 157px;
+    background: black;
+    color: wheat;
+    text-align: center;
+    float: center;
+    border: none;
+    font-size: 14px;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 6px;
 }
 h1{
 	color: navajowhite;
@@ -74,6 +84,79 @@ a:hover
 	color:black;
 }
                 nav ul{
+					list-style-type: none;
+					padding: 0;
+					margin: 0px;
+ }
+
+ ul {
+	 
+    list-style:none;
+	
+}
+
+a:link,a:visited
+{
+	text-decoration:none;
+	color:brown;
+	font-family:Arial;
+
+}
+
+
+header h2
+{
+text-align:center;	
+}
+header h1
+{
+	color:black;
+	margin:10px;
+	font-size:30px;
+	font:bold;
+	font-family:Arial;
+	text-align:center;
+}
+header
+{
+   /* background-image:url('rose1.jpg'); */
+   height: 42px;
+   /* margin:20px; */
+	
+}
+a:hover
+{
+	color:black;
+}
+                nav ul{
 	list-style-type:none;
 	padding:0;
  }
+	nav{
+		text-align:center;
+	}									
+nav li{
+	display:inline;
+	float:left;
+	
+	
+	}
+	nav a:hover{
+		background-color:#f5f5f5;
+	}
+	
+	nav a:link,a:visited
+	{
+	color: black;
+    display: block;
+    width: 321px;
+	text-align: center;
+	background-color: aqua;
+    /* padding: 10px 0; */
+	}
+	.table>tbody>tr>td {
+		border: 1px solid #ddd;
+	}
+	.table>tbody>tr>th {
+		border: 1px solid #ddd;
+	}

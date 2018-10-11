@@ -1,33 +1,7 @@
 
-   <header *ngIf="token === true &&  (path !== 'http://localhost:4200/signup' || path !== 'http://localhost:4200/') ">
-    <!-- <h1>Stephenprakash <br>
-    <h2>The       Official       Site</h2></h1> -->
-    <nav>
-    <ul>
-    <li><a routerLink="/signup">Home</a></li>
-    <!-- <li> <a href="Profile.html">Profile</a></li> -->
-    <li><a routerLink="/pe">Product_Entry</a></li>
-    <li><a routerLink="/bp">Billing_Page</a></li>
-    <li><a href="Gallery.html">Contact</a></li>
-    <li><a routerLink="/" (click)="logout()">Logout</a></li>
-    </ul>
-    </nav>
-    </header>
+ 
 
-<!-- <a >Product_Entry</a>
-<a >Billing_Page</a> -->
-<div *ngIf="token === false && (path === 'http://localhost:4200/')">
-  <form class="login" 
-#loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
-    <h1 class="login-title">Simple Login</h1>
-    <input type="text" class="login-input" name="email" placeholder="Email Adress" ngModel>
-    <input type="{{type}}" class="login-input2" name="password" placeholder="Password" ngModel>
-     <!-- <p class="login-lost"> 
-        <input type="checkbox" (click)="toggleShow()">Show Password
-     </p>  -->
-    <input type="submit" value="Login" class="login-button">
-</form>
-</div>
+<!-- *ngIf="(path === 'http://localhost:4200') || (path === 'http://localhost:4200/') && (window.location.href !== 'http://localhost:4200/signup')" -->
 
 
 <router-outlet></router-outlet>

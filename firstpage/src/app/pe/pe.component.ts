@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pe',
   templateUrl: './pe.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeComponent implements OnInit {
 
-    constructor(){
+  constructor(private Router: Router) {
         this.welcome = "PRODUCT_LIST"
 
         this.products = null;
@@ -28,10 +28,13 @@ export class PeComponent implements OnInit {
     xhttp.open('GET', 'http://localhost:3100/deletedb?product_code='+details['product_code'], false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send();
-        location.reload();
+    this.products = null;
+    xhttp.open('POST', 'http://localhost:3100/fetchallproductdetails', false);
+    xhttp.send();
+    this.products = JSON.parse(xhttp.responseText);
 
 }
-  
+
 
   update=function(details)
 {
@@ -40,7 +43,10 @@ export class PeComponent implements OnInit {
     xhttp.open('GET', 'http://localhost:3100/editdb?product_code='+details['product_code']+'&product_name='+details['product_name']+'&product_price='+details['product_price']+'&product_gst='+details['product_gst'], false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send();
-        location.reload();
+    this.products = null;
+    xhttp.open('POST', 'http://localhost:3100/fetchallproductdetails', false);
+    xhttp.send();
+    this.products = JSON.parse(xhttp.responseText);
 }
   onSubmit = function (details) {
     console.log(details);
@@ -48,7 +54,11 @@ export class PeComponent implements OnInit {
     xhttp.open('GET', 'http://localhost:3100/inserttodb?product_code=' + details['product_code'] + '&product_name=' + details['product_name'] + '&product_price=' + details['product_price'] + '&product_gst=' + details['product_gst'], false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send();
-    location.reload();
+   // location.reload();
+   this.products = null;
+   xhttp.open('POST', 'http://localhost:3100/fetchallproductdetails', false);
+   xhttp.send();
+   this.products = JSON.parse(xhttp.responseText);
   }
 welcome=' PRODUCT_ENTRY';
     products : [{
@@ -58,5 +68,9 @@ welcome=' PRODUCT_ENTRY';
         product_gst:string;
     }];
 
-     
+    logout() {
+      localStorage.clear();
+      // this.token = false;
+      this.Router.navigate(['/login']);
+    }  
 }

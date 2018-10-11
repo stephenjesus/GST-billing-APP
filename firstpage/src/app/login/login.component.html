@@ -1,0 +1,14 @@
+<div>
+    <form class="login" 
+  #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+      <h1 class="login-title">Simple Login</h1>
+      <input type="text" class="login-input" name="email" placeholder="Email Address" ngModel>
+      <input type="{{type}}" class="login-input2" name="password" placeholder="Password" ngModel>
+       <!-- <p class="login-lost"> 
+          <input type="checkbox" (click)="toggleShow()">Show Password
+       </p>  -->
+      <input type="submit" value="Login" class="login-button"> <br> <br>
+      <span routerLink="/signup" class="newacc"> Create an new account </span>
+  </form>
+  </div>
+  

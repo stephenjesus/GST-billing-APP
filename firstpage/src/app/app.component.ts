@@ -19,6 +19,8 @@ export class AppComponent implements DoCheck {
   constructor(private Router: Router) {
     this.userdata = JSON.parse(localStorage.getItem('token'));
     this.path = window.location.href;
+    this.Router.navigate(['/login']);
+
   }
   toggleShow() {
     this.show = !this.show;
@@ -85,7 +87,6 @@ export class AppComponent implements DoCheck {
      } else if (this.userdata) {
          this.token = true;
      }
-     console.log(this.token , 'token55');
  }
  logout() {
     localStorage.clear();

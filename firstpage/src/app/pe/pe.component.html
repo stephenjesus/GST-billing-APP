@@ -1,17 +1,15 @@
-<form
- #userForm="ngForm"
- (ngSubmit)="onSubmit(userForm.value)">
-    <div class="ui-g-12" style="padding: 36px;">
-      product_code:<input type="text" class="inputbox" name='product_code' required placeholder="product_code" ngModel>
-      product_name:<input type="text" class="inputbox" name='product_name' placeholder="product_name" ngModel>
-    
-      product_price:<input type="number" class="inputbox" name='product_price' placeholder="product_price" ngModel>
-      product_gst:<input type="text" class="inputbox" name='product_gst' placeholder="product_gst" ngModel><br>
-      <br> <input type='submit' value='insert' class="butn">
-    </div>
-</form>
-<p>
-<h1>{{welcome}}</h1>
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/signup">New Account</a></li>
+      <li><a routerLink="/pe">Product_Entry</a></li>
+      <li><a routerLink="/bp">Billing_Page</a></li>
+      <li><a routerLink="/login" (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="temp">
+    <h1>{{welcome}}</h1>
                 <table class="table">
                     <tr>
                         <th>S.no</th>
@@ -29,24 +27,49 @@
                
                </table>
 
+               <br>
+  <form
+ #userForm="ngForm"
+ (ngSubmit)="onSubmit(userForm.value)">
+    <div class="ui-g-12" style="padding: 36px;">
+     product_code: 
+      <input type="text" class="inputbox" name='product_code' required placeholder="product_code" ngModel> 
+      product_name:  
+      <input type="text" class="inputbox" name='product_name' placeholder="product_name" ngModel> 
+     
+      product_price:
+       
+      <input type="number" class="inputbox" name='product_price' placeholder="product_price" ngModel> 
+       product_gst:  
+      <input type="text" class="inputbox" name='product_gst' placeholder="product_gst" ngModel><br>
+      <br> <input type='submit' value='insert' class="butn">
+    </div>
+</form>
+
 <br>
 
- <form
-  #del="ngForm"
-   (ngSubmit)="delete(del.value)">
-   DELETE:
-   <div class="ui-g-12" style="padding-left: 36px; margin-top: 1%">
-    <input type='text' class="inputbox" name='product_code' required placeholder="product_code"  ngModel>
-    <br>
-    <br>
-    <input type='submit' value='delete' class="butn"> 
+<form
+#del="ngForm"
+ (ngSubmit)="delete(del.value)">
+ <span class="del"> DELETE: </span> 
+ <div class="ui-g-12" style="padding-left: 36px; margin-top: 1%">
+  <input type='text' class="inputbox" name='product_code' required placeholder="product_code"  ngModel>
+  <br>
+  <br>
+  <input type='submit' value='delete' class="butn"> 
 </div>
-  </form>
+</form>
+<p>
+        
+<br>
+
+
 
 
 <br>
 <BR>
-  UPDATE:
+ 
+  <span class="del">UPDATE: </span> 
  <form #up="ngForm"
   (ngSubmit)="update(up.value)">
   <div class="ui-g-12" style="padding-left: 36px; margin-top: 1%"> 
@@ -59,4 +82,5 @@
     <input type='submit' value='update' class="butn"> 
   </div>
   </form>
+</div>
   
