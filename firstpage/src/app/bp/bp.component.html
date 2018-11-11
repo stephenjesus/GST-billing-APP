@@ -42,7 +42,7 @@
                            <td class="price">{{product_name.product_price}}</td>
                         <td class="gst">{{product_name.product_price*(product_name.product_gst/100)}}</td>
                         <td class="quantity"><input #box (keyup)="onEnter(sn.innerHTML,box.value)"></td>
-                          <td #add>{{(product_name.product_price+product_name.product_price*(product_name.product_gst/100))*quantities[sn.innerHTML]}}</td>
+                          <td #add>{{ (product_name.product_price * product_name.quanty) + (product_name.product_price*(product_name.product_gst/100))}}</td>
                           <input type="button" value="TAB" class="tbut" (keypress)="settotal(sn.innerHTML, add.innerHTML)" (keyup)="settotal(sn.innerHTML, add.innerHTML)">
                           <tr>
                              <td colspan="6" class="Gt">Total price</td>

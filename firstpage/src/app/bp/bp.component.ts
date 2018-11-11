@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as _ from 'lodash';
 @Component({
   selector: 'app-bp',
   templateUrl: './bp.component.html',
@@ -31,6 +32,12 @@ export class BpComponent implements OnInit {
   onEnter(sno: number, value: number) {
     this.sno = sno;
     this.quantities[sno] = value;
+    this.products[sno - 1].quanty = value;
+    this.fulltotal = 0;
+    _.forEach(this.products , (each) => {
+      this.products[sno - 1].gstper = each.product_price * (each.product_gst / 100);
+      this.fulltotal = this.fulltotal +  (each.product_price * each.quanty) +  this.products[sno - 1].gstper;
+    });
   }
 
 
@@ -51,6 +58,8 @@ export class BpComponent implements OnInit {
     product_code: string,
     product_price: string;
     product_gst: string;
+    quanty: number;
+    gstper: any;
   }];
 
 
